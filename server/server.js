@@ -36,9 +36,10 @@ io.sockets.on('connection', function (socket) {
     });
 });
 
+display.render('tile', io);
 setInterval(function () {
     display.render('tile', io);
-}, 15000);
+}, 5000);
 
 app.listen(3000);
 console.log("listening on 3000");

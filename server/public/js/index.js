@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 $(document).ready(function () {
+  document.getElementById("movie").play();
   var socket = io.connect(location.href, {
           "max reconnection attempts": 1000000,
           "reconnection limit": 2000

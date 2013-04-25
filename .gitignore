@@ -4,3 +4,4 @@ tags
 server/public/img
 app/buildId.txt
 app/build
+app/project.properties
