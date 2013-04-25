@@ -41,20 +41,12 @@ $(document).ready(function () {
       top = bottom;
       bottom = swap;
 
-      style += "background-size: " + screen.width + "px " + screen.height + "px;";
+      //style += "background-size: " + screen.width + "px " + screen.height + "px;";
       style += "z-index: " + ++z;
       $(top).attr("style", style);
 
       $(top).show();
       a.fade(top.replace("#", ''), "in", "500ms", "ease-in-out");
       setTimeout($(bottom).hide, 5);
-  });
-
-  socket.on('added', function (data) {
-      $("#count").text(data.clients);
-  });
-
-  socket.on('count', function (data) {
-      $("#count").text(data.clients);
   });
 });
