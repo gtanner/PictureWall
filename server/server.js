@@ -39,7 +39,7 @@ io.sockets.on('connection', function (socket) {
 display.render('tile', io);
 setInterval(function () {
     display.render('tile', io);
-}, 5000);
+}, 10000);
 
 app.listen(3000);
 console.log("listening on 3000");

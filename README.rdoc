@@ -2,5 +2,12 @@
 
 Control a bunch of playbooks to display a single image or multiple images.
 
+To start the server:
+
+    cd server
+    node server.js
+
+Then connect the playbooks browser to the IP.
+
 =Contributers:
     Gord Tanner <gtanner@gmail.com>

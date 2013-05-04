@@ -16,6 +16,7 @@
 
 $(document).ready(function () {
   document.getElementById("movie").play();
+
   var socket = io.connect(location.href, {
           "max reconnection attempts": 1000000,
           "reconnection limit": 2000
@@ -36,19 +37,19 @@ $(document).ready(function () {
       z = 1;
 
   socket.on('img', function (data) {
-      var style = "background-image: url('" + data.url + "');",
-          swap;
+      var style = "background-image: url('" + data.url + "');";
 
-      swap = top;
-      top = bottom;
-      bottom = swap;
+      a.fade(top.replace("#", ''), "out", "1500ms", "ease-out");
+      setTimeout(function () {
+          style += "background-size: " + screen.width + "px " + screen.height + "px;";
+          style += "z-index: " + ++z;
+          $(top).attr("style", style);
+          $(top).hide();
 
-      //style += "background-size: " + screen.width + "px " + screen.height + "px;";
-      style += "z-index: " + ++z;
-      $(top).attr("style", style);
-
-      $(top).show();
-      a.fade(top.replace("#", ''), "in", "500ms", "ease-in-out");
-      setTimeout($(bottom).hide, 5);
+          setTimeout(function () {
+              a.fade(top.replace("#", ''), "in", "1500ms", "ease-in-out");
+              $(top).show();
+          }, 1000);
+      }, 1000);
   });
 });
